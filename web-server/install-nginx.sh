@@ -14,5 +14,4 @@ mv /usr/share/nginx/html/index.html /usr/share/nginx/html/_index.html
 cp /vagrant/proxy.conf /etc/nginx/conf.d/
 
 systemctl restart nginx
-
-sudo setsebool -P httpd_can_network_connect on
+setsebool -P httpd_can_network_connect on
