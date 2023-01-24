@@ -4,7 +4,7 @@ Vagrant.configure("2") do |config|
   # Web Server with apache
   config.vm.define "web-server-apache-1" do |wsa1|
     wsa1.vm.box = "rockylinux/9"
-    wsa1.vm.network :private_network, ip: "192.168.56.20", :netmask => "255.255.255.0"
+    wsa1.vm.network "private_network", ip: "192.168.56.20", :netmask => "255.255.255.0"
     wsa1.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
       vb.cpus = "1"
@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "web-server-apache-2" do |wsa2|
     wsa2.vm.box = "rockylinux/9"
-    wsa2.vm.network :private_network, ip: "192.168.56.21", :netmask => "255.255.255.0"
+    wsa2.vm.network "private_network", ip: "192.168.56.21", :netmask => "255.255.255.0"
     wsa2.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
       vb.cpus = "1"
@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
   # Proxy Server with nginx
   config.vm.define "proxy-server-nginx" do |psn|
     psn.vm.box = "rockylinux/9"
-    psn.vm.network :private_network, ip: "192.168.56.10", :netmask => "255.255.255.0"
+    psn.vm.network "private_network", ip: "192.168.56.10", :netmask => "255.255.255.0"
     psn.vm.network "public_network", bridge: "wlo1"
     psn.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
